@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Even number</title>
+</head>
+
+<body style="text-align: center;">
+    <P
+        style="margin: auto; padding: 20px 10px; max-width: 420px; background-color: yellowgreen; font-size:20px; font-weight: 700; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        Even Numbers 1 to 100</P>
+    <button onclick="print()"
+        style="height: 30px; padding: 0 12px; margin:32px 0 16px; border:0; border-radius: 8px; background-color: blue; color: aliceblue; text-align: center; ">
+        Click here</button>
+    <div id="demoId" style="width: 100%; text-align: center; "></div>
+</body>
+<script>
+    const n = 100;
+    function print() {
+        let evenNumberArr = [];
+        for (let a = 1; a <= n; a++) {
+            if (a % 2 === 0) {
+                evenNumberArr.push(a);
+            }
+        }
+
+        for (let k = 0; k < 10; k++) {
+            const p = 5;
+            setTimeout(() => {
+                let text = "";
+                for (let j = p * k; j < (p * k + 5); j++) {
+                    text += evenNumberArr[j] + "<br>";
+                }
+                document.getElementById("demoId").innerHTML = text;
+            }, k * 5000);
+        }
+    }
+
+</script>
+
+</html>
